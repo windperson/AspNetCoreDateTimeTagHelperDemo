@@ -1,0 +1,28 @@
+﻿@using System.Linq
+@model PeriodViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h5>DateTimeOffest Demo</h5>
+    <form asp-controller="Home" asp-action="Demo" method="post">
+        Time Zone:
+        <select asp-for="TimeZoneId" asp-items="Model.PresetTimeZoneIds"></select>
+        <span asp-validation-for="TargetTimeZone" class="text-danger"></span>
+        <div>
+            <span>
+                Begin:
+                <input asp-for="Begin" />
+            </span>
+            <span asp-validation-for="Begin" class="text-danger"></span>
+            <br />
+            <span>
+                End:
+                <input asp-for="End" />
+            </span>
+            <span asp-validation-for="End" class="text-danger"></span>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
